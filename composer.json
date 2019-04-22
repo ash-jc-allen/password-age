@@ -1,0 +1,24 @@
+{
+    "name": "ashallendesign/password-age",
+    "description": "A simple package for managing old passwords for users.",
+    "type": "library",
+    "authors": [
+        {
+            "name": "ash-allen",
+            "email": "mail@ashallendesign.co.uk"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "AshAllenDesign\\PasswordAge\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "AshAllenDesign\\PasswordAge\\PasswordAgeServiceProvider"
+            ]
+        }
+    }
+}
