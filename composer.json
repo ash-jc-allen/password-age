@@ -17,7 +17,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "AshAllenDesign\\PasswordAge\\PasswordAgeServiceProvider"
+                "AshAllenDesign\\PasswordAge\\Providers\\PasswordAgeServiceProvider"
             ]
         }
     }

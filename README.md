@@ -14,6 +14,8 @@ To install the package using Composer, use the following command:
 Once it is installed, you will need to add the **PasswordAge** trait to the User model (assuming that you are enforcing the policy on the User model).
 You must also make sure that the User model also implements the **ChecksPasswordAge** contract.
 
+After this, run ``` php artisan migrate ``` to add the package's fields to the 'users' table.
+
 Note: The package makes use of notifications for contacting the user, so please ensure that the **Notifiable** trait is added to the User model.
 
 Example of how the User model should look after adding the required traits and contract:
@@ -95,6 +97,5 @@ $users = User::onlyNonExpiredPasswords()->get();
 ```
 
 ## Known Issues & Future Work
- * The config file needs to be publishable.
  * The config file should have options so that the notifications can be sent via SMS and slack.
  * The package currently listens on the PasswordReset event fired by Laravel. This isn't great though because the password can be updated without this event being fired.

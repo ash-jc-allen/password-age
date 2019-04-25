@@ -1,12 +1,11 @@
 <?php
 
-namespace AshAllenDesign\PasswordAge;
+namespace AshAllenDesign\PasswordAge\Providers;
 
 use AshAllenDesign\PasswordAge\Commands\CheckForExpiredPasswords;
-use AshAllenDesign\PasswordAge\Providers\PasswordAgeEventServiceProvider;
 use Illuminate\Support\ServiceProvider;
 
-class PasswordAgeServiceProviderServiceProvider extends ServiceProvider
+class PasswordAgeServiceProvider extends ServiceProvider
 {
     public function register()
     {
@@ -28,7 +27,7 @@ class PasswordAgeServiceProviderServiceProvider extends ServiceProvider
 
     private function initPackageConfig()
     {
-        $this->publishes([__DIR__ . '/config/password-age.php' => 'password-age.php']);
+        $this->publishes([__DIR__ . '/config/password-age.php' => config_path('password-age.php')]);
         $this->mergeConfigFrom(__DIR__ . '/config/password-age.php', 'password-age');
     }
 
